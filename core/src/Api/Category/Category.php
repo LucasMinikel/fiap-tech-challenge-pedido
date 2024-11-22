@@ -43,16 +43,14 @@ class Category extends Controller
                 400
             );
         }
-    }
+    }    
 
-    public function store(Request $request)
+    public function show(Request $request, string $id)
     {
         try {
-            $dto = new CategoryDtoInput(null, $request->name, $request->type);
+            $result = (new ControllerCategoryShow($this->AbstractFactoryRepository))->execute($id);
 
-            $id = (new ControllerCategoryStore($this->AbstractFactoryRepository))->execute($dto);
-
-            return $this->return(["id" => $id], 201);
+            return $this->return($result, 200);
         } catch (DefaultException $e) {
             return $this->return(
                 [
@@ -73,13 +71,15 @@ class Category extends Controller
             );
         }
     }
-
-    public function show(Request $request, string $id)
+    /*
+    public function store(Request $request)
     {
         try {
-            $result = (new ControllerCategoryShow($this->AbstractFactoryRepository))->execute($id);
+            $dto = new CategoryDtoInput(null, $request->name, $request->type);
 
-            return $this->return($result, 200);
+            $id = (new ControllerCategoryStore($this->AbstractFactoryRepository))->execute($dto);
+
+            return $this->return(["id" => $id], 201);
         } catch (DefaultException $e) {
             return $this->return(
                 [
@@ -155,5 +155,5 @@ class Category extends Controller
                 400
             );
         }
-    }
+    }*/
 }

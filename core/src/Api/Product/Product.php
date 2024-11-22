@@ -72,7 +72,7 @@ class Product extends Controller
             );
         }
     }
-
+/*
     public function store(Request $request)
     {
         try {
@@ -172,4 +172,5 @@ class Product extends Controller
             );
         }
     }
+        */
 }

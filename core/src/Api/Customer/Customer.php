@@ -16,7 +16,7 @@ use TechChallenge\Application\DTO\Customer\DtoInput as CustomerDtoInput;
 
 class Customer extends Controller
 {
-    public function index(Request $request)
+    /*public function index(Request $request)
     {
         try {
             $results = (new ControllerCustomerIndex($this->AbstractFactoryRepository))
@@ -74,7 +74,7 @@ class Customer extends Controller
                 400
             );
         }
-    }
+    }*/
 
     public function show(Request $request, string $id)
     {
@@ -103,7 +103,7 @@ class Customer extends Controller
         }
     }
 
-    public function update(Request $request, string $id)
+    /*public function update(Request $request, string $id)
     {
         try {
             $dto = new CustomerDtoInput(
@@ -164,7 +164,7 @@ class Customer extends Controller
                 400
             );
         }
-    }
+    }*/
 
     public function showByCfp(Request $request, string $cpf)
     {
