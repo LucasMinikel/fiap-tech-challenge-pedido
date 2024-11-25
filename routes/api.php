@@ -49,3 +49,12 @@ Route::controller(Order::class)
         Route::post('/status/{id}', [Order::class, "changeStatus"]);
         Route::post('/webhook', [Order::class, "webhook"]);
     });
+
+    /*
+    ************Rodar teste*****************
+    php artisan test
+    php artisan test --filter=CustomerTest
+    php artisan test --filter=ProductTest
+    php artisan test --filter=CategoryTest
+    php artisan test --filter=OrderTest    
+    */
