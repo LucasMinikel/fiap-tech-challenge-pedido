@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use TechChallenge\Infra\DB\Eloquent\Order;
+use TechChallenge\Infra\DB\Eloquent\Order\Model as Order;
 
 class OrderTest extends TestCase
 {

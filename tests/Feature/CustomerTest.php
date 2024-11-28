@@ -4,7 +4,8 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use TechChallenge\Infra\DB\Eloquent\Customer;
+// use TechChallenge\Infra\DB\Eloquent\Customer;
+use TechChallenge\Infra\DB\Eloquent\Customer\Model as Customer;
 
 class CustomerTest extends TestCase
 {

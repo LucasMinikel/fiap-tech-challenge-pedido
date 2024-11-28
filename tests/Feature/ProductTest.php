@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use TechChallenge\Infra\DB\Eloquent\Product;
+use TechChallenge\Infra\DB\Eloquent\Product\Model as Product;
 
 class ProductTest extends TestCase
 {

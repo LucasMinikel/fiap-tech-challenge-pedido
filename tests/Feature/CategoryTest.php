@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use TechChallenge\Infra\DB\Eloquent\Category;
+use TechChallenge\Infra\DB\Eloquent\Category\Model as Category;
 
 class CategoryTest extends TestCase
 {
