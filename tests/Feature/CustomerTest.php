@@ -15,26 +15,32 @@ class CustomerTest extends TestCase
      */
     public function test_show_customer_successfully()
     {
-        // Arrange: Cria um cliente no banco de dados
         $customer = Customer::factory()->create([
-            'id' => 1,
+            'id' => '1', // ID como string, já que a chave primária não é auto-incrementada
             'name' => 'John Doe',
             'cpf' => '12345678901',
             'email' => 'john@example.com',
-        ]);
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
+        ]);      
 
         // Act: Faz uma requisição GET para o endpoint de show
-        $response = $this->getJson('/customer/' . $customer->id);
+        $response = $this->getJson('/customer/' . $customer->id);     
 
         // Assert: Verifica se o retorno está correto
         $response->assertStatus(200) // Código HTTP 200
                  ->assertJson([
                      'id' => $customer->id,
-                     'name' => 'John Doe',
-                     'cpf' => '12345678901',
-                     'email' => 'john@example.com',
+                     'name' => $customer->name,
+                     'cpf' => $customer->cpf,
+                     'email' => $customer->email,
+                     'created_at' => $customer->created_at->toISOString(),
+                     'updated_at' => $customer->updated_at->toISOString(),
+                     'deleted_at' => $customer->deleted_at,
                  ]);
     }
+    
 
     /**
      * Teste para verificar se o endpoint de show retorna 404 quando o cliente não existe.

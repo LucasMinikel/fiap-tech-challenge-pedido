@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use Illuminate\Database\Eloquent\Factories\Factory;
+use TechChallenge\Infra\DB\Eloquent\Customer\Model as Customer;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -19,6 +20,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Factory::guessFactoryNamesUsing(function ($modelName) {
+            if ($modelName === Customer::class) {
+                return 'Database\\Factories\\CustomerFactory';
+            }
+    
+            
+            return 'Database\\Factories\\' . class_basename($modelName) . 'Factory';
+        });
     }
 }
