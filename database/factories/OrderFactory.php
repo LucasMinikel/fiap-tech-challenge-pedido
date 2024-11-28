@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use TechChallenge\Infra\DB\Eloquent\Order;
+use TechChallenge\Infra\DB\Eloquent\Order\Model as Order;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OrderFactory extends Factory

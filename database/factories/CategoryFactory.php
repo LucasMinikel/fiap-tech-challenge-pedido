@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use TechChallenge\Infra\DB\Eloquent\Category;
+use TechChallenge\Infra\DB\Eloquent\Category\Model as Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CategoryFactory extends Factory

@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use TechChallenge\Infra\DB\Eloquent\Product;
+use TechChallenge\Infra\DB\Eloquent\Product\Model as Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProductFactory extends Factory
