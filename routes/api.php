@@ -11,20 +11,13 @@ Route::controller(Product::class)
     ->group(function () {
         Route::get('/', [Product::class, "index"]);
         Route::get('/{id}', [Product::class, "show"]);
-       // Route::post('/', [Product::class, "store"]);
-       // Route::put('/{id}', [Product::class, "update"]);
-       // Route::delete('/{id}', [Product::class, "delete"]);
     });
 
 Route::controller(Customer::class)
     ->prefix('/customer')
     ->group(function () {
-       // Route::get('/', [Customer::class, "index"]);
         Route::get('/{id}', [Customer::class, "show"]);
-       // Route::post('', [Customer::class, "store"]);
-       // Route::put('/{id}', [Customer::class, "update"]);
-       // Route::delete('/{id}', [Customer::class, "delete"]);
-        Route::get('/cpf/{cpf}', [Customer::class, "showByCfp"]);
+        Route::get('/cpf/{cpf}', [Customer::class, "showByCfp"]);    
     });
 
 Route::controller(Category::class)
@@ -32,9 +25,6 @@ Route::controller(Category::class)
     ->group(function () {
         Route::get('/', [Category::class, "index"]);
         Route::get('/{id}', [Category::class, "show"]);
-       // Route::post('/', [Category::class, "store"]);
-       // Route::put('/{id}', [Category::class, "update"]);
-       // Route::delete('/{id}', [Category::class, "delete"]);
     });
 
 Route::controller(Order::class)
